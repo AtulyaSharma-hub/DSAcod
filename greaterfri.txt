@@ -1,0 +1,32 @@
+BEGIN 
+DEFINE class B (prototype declaration)
+    DEFINE class A
+        PRIVATE: numa (integer)
+        PUBLIC:
+            CONSTRUCTOR A(a)
+                SET numa = a
+            END CONSTRUCTOR
+            FRIEND FUNCTION findgreater(A, B)
+    END CLASS
+
+    DEFINE class B
+        PRIVATE: numb (integer)
+        PUBLIC:
+            CONSTRUCTOR B(b)
+                SET numb = b
+            END CONSTRUCTOR
+            FRIEND FUNCTION findgreater(A, B)
+    END CLASS
+    DEFINE FUNCTION findgreater(A obja, B objb)
+        PRINT "Greater element is: "
+        IF obja.numa > objb.numb THEN
+            PRINT obja.numa
+        ELSE
+            PRINT objb.numb
+        END IF
+    END FUNCTION
+    MAIN FUNCTION
+        CREATE object obja of class A with value 10
+        CREATE object objb of class B with value 20
+        CALL findgreater(obja, objb)
+    END MAIN END

@@ -1,0 +1,41 @@
+START  
+    SAY "Enter the size of the square matrix (n)"  
+    TAKE n from the user  
+    MAKE a matrix called m1 of size n  
+    MAKE a matrix called m2 of size n  
+    MAKE a matrix called result of size n  
+    SAY "Enter numbers for first matrix"  
+    FILL m1 with numbers from the user  
+    SAY "Enter numbers for second matrix"  
+    FILL m2 with numbers from the user  
+    MULTIPLY m1 and m2 and put the answer in result  
+    SAY "Here is the final matrix after multiplication:"  
+    SHOW result 
+END  
+---
+HOW TO FILL A MATRIX:  
+    FOR each row from 1 to n  
+        FOR each column from 1 to n  
+            TAKE number from user and put it in the right place  
+        END  
+    END  
+HOW TO SHOW A MATRIX:  
+    FOR each row from 1 to n  
+        FOR each column from 1 to n  
+            PRINT the number  
+        END  
+        GO to a new line  
+    END  
+HOW TO MULTIPLY TWO MATRICES:  
+    MAKE a new matrix called result, fill it with zeros  
+    FOR each row from 1 to n  
+        FOR each column from 1 to n  
+            result[row][column] = 0  
+            FOR each k from 1 to n  
+                MULTIPLY m1[row][k] with m2[k][column]  
+                ADD this to result[row][column]  
+            END  
+        END  
+    END  
+    RETURN result  
+
